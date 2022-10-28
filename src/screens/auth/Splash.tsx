@@ -16,11 +16,11 @@ export default function Splash(props: any) {
         <View style={style.secfirst}>
           <Image
             style={style.second}
-            source={require("../../../assets/splashone.png")}
+            source={require("../../../assets/splashscreen/")}
           />
           <Image
             style={style.second}
-            source={require("../../../assets/splashone.png")}
+            source={require("../../../assets/splashscreen/splashone.png")}
           />
         </View>
         <Text style={style.paragraph}>starting Game...</Text>
