@@ -1,12 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
+import 'react-native-gesture-handler';
 import { StyleSheet, Text, View } from 'react-native';
+import { Provider } from 'react-redux';
+import {store} from "./src/Store"
+import { NavigationContainer } from '@react-navigation/native';
+import Stacknav from './src/Stacknav';
+import { useFonts } from 'expo-font';
+
 
 export default function App() {
+  const [fontsloaded]= useFonts({
+    'Play-Regular': require('./assets/fonts/Play/Play-Regular.ttf'),
+    'Play-Bold': require('./assets/fonts/Play/Play-Regular.ttf')
+  })
+  if(!fontsloaded)return null;
+  
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    
+      <Provider store={store}>
+        <NavigationContainer>
+          <Stacknav/>
+        </NavigationContainer>
+    </Provider>
+    
   );
 }
 
@@ -16,5 +31,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+   
   },
 });
