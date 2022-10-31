@@ -2,12 +2,12 @@ import { View, Text, StyleSheet, Image } from "react-native";
 import { CenteredWrapper } from "../wrappers/CenteredWrapper";
 import { useEffect } from "react";
 
-export default function Splash(props: any) {
-  /*useEffect(()=>{
-       setTimeout(()=>{
-            props.navigation.navigate('counter')
-       }, 2000)
-    })*/
+export default function SplashScreen(props: any) {
+  useEffect(() => {
+    setTimeout(() => {
+      props.navigation.navigate("login");
+    }, 2000);
+  });
 
   return (
     <View style={style.cont}>
@@ -16,17 +16,17 @@ export default function Splash(props: any) {
         <View style={style.secfirst}>
           <Image
             style={style.second}
-            source={require("../../../assets/splashscreen/")}
+            source={require("../../../assets/splashscreen/img_1.png")}
           />
           <Image
             style={style.second}
-            source={require("../../../assets/splashscreen/splashone.png")}
+            source={require("../../../assets/splashscreen/img_1.png")}
           />
         </View>
         <Text style={style.paragraph}>starting Game...</Text>
         <Image
           style={style.third}
-          source={require("../../../assets/Splashthird.png")}
+          source={require("../../../assets/splashscreen/img_2.png")}
         />
       </CenteredWrapper>
     </View>
@@ -50,14 +50,12 @@ const style = StyleSheet.create({
     justifyContent: "space-evenly",
     marginTop: 50,
   },
-  paragraph:{
-    fontFamily: 'Play-Regular',
+  paragraph: {
+    fontFamily: "Play-Regular",
     marginTop: 50,
   },
   third: {
     marginTop: 50,
   },
-  second: {
-
-  },
+  second: {},
 });
