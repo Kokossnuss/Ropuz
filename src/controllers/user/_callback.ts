@@ -9,9 +9,12 @@ export const _callback=(user:any)=>{
         password: user.password 
     })
     .then(response=>{
-        return _setAUTH(response.data.jwt)
+        _setAUTH(response.data.jwt)
+        return 'succes'
     })
-    .catch(error=>console.log(error))
-
-    console.log('user_LoggedIn')
+    .catch(error=>{
+        console.log(error)
+        console.log("crash")
+        return 
+    })
 }

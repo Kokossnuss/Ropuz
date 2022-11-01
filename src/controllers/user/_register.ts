@@ -13,6 +13,4 @@ export const _register=(user:any)=>{
         return _setAUTH(response.data.jwt)
     })
     .catch(error=>console.log(error))
-
-    console.log('user_Registert')
 }

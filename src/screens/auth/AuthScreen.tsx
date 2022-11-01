@@ -2,7 +2,7 @@ import { View, StyleSheet, Text } from "react-native";
 import { CenteredWrapper } from "../../components/wrappers/CenteredWrapper";
 import Login  from "../../redux/auth/login/Login";
 
-export default function LoginScreen(){
+export default function AuthScreen(props:any){
 
     return(
         <View style={style.cont}>

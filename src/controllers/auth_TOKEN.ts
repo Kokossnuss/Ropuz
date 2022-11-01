@@ -7,17 +7,15 @@ export const _getAUTH=async()=>{
     }catch(e){
         console.log(e)
     }
-
-    console.log('TOKEN_GET');
 };
 
 export const _setAUTH=async(jwt:string)=>{
     try{
+        console.log('out')
         return await AsyncStorage.setItem(AUTH_TOKEN, jwt)
     }catch(e){
         console.log(e)
     }
-    console.log('TOKEN_SET')
 }
 
 export const _removeAUTH=async()=>{
@@ -26,5 +24,4 @@ export const _removeAUTH=async()=>{
     }catch(e){
         console.log(e)
     }
-    console.log('TOKEN_REMOVE')
 }

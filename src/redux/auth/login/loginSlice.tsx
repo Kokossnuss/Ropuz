@@ -6,6 +6,7 @@ import { _register } from "../../../controllers/user/_register";
 interface loginState{
     new:boolean,
     user:user,
+    test?: void,
 }
 
 type user={
