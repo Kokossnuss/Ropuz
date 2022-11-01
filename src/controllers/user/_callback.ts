@@ -3,10 +3,10 @@ import { _USER } from "../../utils/constant";
 import { _setAUTH } from "../auth_TOKEN";
 
 
-export const _callback= ()=>{
+export const _callback=(user:any)=>{
     axios.post(_USER.callback,{
-        identifier: "test",
-        password: "testing" //need to change to input value
+        identifier: user.username,
+        password: user.password 
     })
     .then(response=>{
         return _setAUTH(response.data.jwt)

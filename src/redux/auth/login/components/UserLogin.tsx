@@ -12,7 +12,7 @@ import {
     password,
   } from "../loginSlice";
   import {style} from "../Login"
-  import { _callback } from "../../../../controllers/user/_callback";
+  import { _logIn } from "../loginSlice";
 
   export default function UserLogin(){
     const dispatch = useAppDispatch();
@@ -30,7 +30,7 @@ import {
           placeholder="password"
           onChangeText={(Text) => dispatch(password(Text))}
         />
-        <TouchableOpacity onPress={()=>_callback()} style={style.btn}>
+        <TouchableOpacity onPress={()=>dispatch(_logIn())} style={style.btn}>
           <Text style={[style.t, { textDecorationLine: "none" }]}>Login</Text>
         </TouchableOpacity>
         <TouchableOpacity

@@ -1,5 +1,7 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import { RootState } from "../../Store";
+import { _callback } from "../../../controllers/user/_callback";
+import { _register } from "../../../controllers/user/_register";
 
 interface loginState{
     new:boolean,
@@ -40,12 +42,16 @@ export const loginSlice= createSlice({
         email:(state, action:PayloadAction<string>)=>{
                 state.user.email= action.payload
         },
-
-        
+        _logIn:state=>{
+            return _callback(state.user)
+        },
+        _signIn:state=>{
+            return _register(state.user)
+        }
     }
 })
 
-export const {newUser, existingUser,username, password, email} = loginSlice.actions;
+export const {newUser, existingUser,username, password, email, _logIn, _signIn} = loginSlice.actions;
 
 export const selectUser = (state:RootState) =>state.auth.login;
 

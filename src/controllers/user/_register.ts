@@ -1,13 +1,16 @@
 import axios from "axios";
 import { _USER } from "../../utils/constant";
+import { _setAUTH } from "../auth_TOKEN";
 
 
-export const _register=()=>{
+export const _register=(user:any)=>{
     axios.post(_USER.register,{
-        //post User Data
+        username: user.username,
+        email: user.email,
+        password: user.password
     })
     .then(response=>{
-        return response.data.jwt
+        return _setAUTH(response.data.jwt)
     })
     .catch(error=>console.log(error))
 

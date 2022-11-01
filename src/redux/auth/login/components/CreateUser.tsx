@@ -13,6 +13,7 @@ import {
     password,
   } from "../loginSlice";
   import { style } from "../Login";
+  import { _signIn } from "../loginSlice";
 
 
   export default function CreateUser(){
@@ -36,7 +37,7 @@ import {
           style={style.input}
           placeholder="password"
         />
-        <TouchableOpacity style={[style.btn, { bottom: 20 }]}>
+        <TouchableOpacity onPress={()=>dispatch(_signIn())} style={[style.btn, { bottom: 20 }]}>
           <Text style={[style.t, { textDecorationLine: "none" }]}>Sign in</Text>
         </TouchableOpacity>
         <TouchableOpacity
