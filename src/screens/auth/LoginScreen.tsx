@@ -1,6 +1,6 @@
 import { View, StyleSheet, Text } from "react-native";
-import { CenteredWrapper } from "../wrappers/CenteredWrapper";
-import Login  from "../../components/Login";
+import { CenteredWrapper } from "../../components/wrappers/CenteredWrapper";
+import Login  from "../../redux/auth/login/Login";
 
 export default function LoginScreen(){
 

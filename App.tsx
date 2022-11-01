@@ -1,7 +1,7 @@
 import 'react-native-gesture-handler';
 import { StyleSheet, Text, View } from 'react-native';
 import { Provider } from 'react-redux';
-import {store} from "./src/Store"
+import {store} from "./src/redux/Store"
 import { NavigationContainer } from '@react-navigation/native';
 import Stacknav from './src/Stacknav';
 import { useFonts } from 'expo-font';

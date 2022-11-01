@@ -1,5 +1,5 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import { RootState } from "../Store";
+import { RootState } from "../../Store";
 import axios from "axios";
 
 interface loginState{
@@ -46,28 +46,28 @@ export const loginSlice= createSlice({
         },
 
         createUser: state=>{
-            axios.post(state.url+"/api/auth/local/register",{
+            /*axios.post(state.url+"/api/auth/local/register",{
                 username: state.user.username,
                 email: state.user.email,
                 password: state.user.password
             }).then(response=>{
                return state.jwt= response.data.jwt;
-            }).catch(error=>{console.log(error)})
+            }).catch(error=>{console.log(error)})*/
         },
 
         loginUser: state=>{
-            axios
+            /*axios
                 .post(state.url+"/api/auth/local",{
                     identifier: state.user.username,
                     password: state.user.password
                 }).then(response=>{return state.jwt=response.data.jwt})
-                .catch(error=>console.log(error))
+                .catch(error=>console.log(error))*/
         }
     }
 })
 
 export const {newUser, existingUser,usernamest, passwordst, emailst, createUser, loginUser} = loginSlice.actions;
 
-export const selectUser = (state:RootState) =>state.login;
+export const selectUser = (state:RootState) =>state.auth.login;
 
 export default loginSlice.reducer

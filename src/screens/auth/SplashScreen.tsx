@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet, Image } from "react-native";
-import { CenteredWrapper } from "../wrappers/CenteredWrapper";
+import { CenteredWrapper } from "./../../components/wrappers/CenteredWrapper";
 import { useEffect } from "react";
 
 export default function SplashScreen(props: any) {
