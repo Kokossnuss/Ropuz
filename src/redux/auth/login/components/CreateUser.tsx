@@ -8,10 +8,9 @@ import {
   import { useAppDispatch} from "../../../hooks/Redux";
   import {
     existingUser,
-    createUser,
-    usernamest,
-    emailst,
-    passwordst,
+    username,
+    email,
+    password,
   } from "../loginSlice";
   import { style } from "../Login";
 
@@ -23,21 +22,21 @@ import {
     <KeyboardAvoidingView behavior="padding">
       <View style={style.cont}>
         <TextInput
-          onChangeText={(Text) => dispatch(usernamest(Text))}
+          onChangeText={(Text) => dispatch(username(Text))}
           style={style.input}
           placeholder="username"
         />
         <TextInput
-          onChangeText={(Text) => dispatch(emailst(Text))}
+          onChangeText={(Text) => dispatch(email(Text))}
           style={style.input}
           placeholder="E-Mail"
         />
         <TextInput
-          onChangeText={(Text) => dispatch(passwordst(Text))}
+          onChangeText={(Text) => dispatch(password(Text))}
           style={style.input}
           placeholder="password"
         />
-        <TouchableOpacity onPress={()=>dispatch(createUser())} style={[style.btn, { bottom: 20 }]}>
+        <TouchableOpacity style={[style.btn, { bottom: 20 }]}>
           <Text style={[style.t, { textDecorationLine: "none" }]}>Sign in</Text>
         </TouchableOpacity>
         <TouchableOpacity
