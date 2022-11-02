@@ -1,13 +1,14 @@
 import { View, StyleSheet, Text } from "react-native";
 import { CenteredWrapper } from "../../components/wrappers/CenteredWrapper";
 import Login  from "../../redux/auth/login/Login";
+import { useAppSelector } from "../../redux/hooks/Redux";
 
 export default function AuthScreen(props:any){
-
+    const message= useAppSelector(state=>state.auth.login.submit.message)
     return(
         <View style={style.cont}>
             <CenteredWrapper>
-                <Text style={style.title}>User Login</Text>
+                <Text style={style.title}>{message}</Text>
                 {Login()}
             </CenteredWrapper>
         </View>

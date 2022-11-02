@@ -1,46 +1,40 @@
 import {
     View,
-    TextInput,
-    TouchableOpacity,
-    Text,
     KeyboardAvoidingView,
+    StyleSheet
   } from "react-native";
-  import { useAppDispatch} from "../../../hooks/Redux";
-  import {
-    newUser,
-    username,
-    password,
-  } from "../loginSlice";
-  import {style} from "../Login"
-  import { _logIn } from "../loginSlice";
+  import { Username, Password } from "./features/user/LoginInputs";
+  import { LogintypeBtn } from "./features/logintype/LogintypeBtn";
+  import { Submitbtn } from "./features/submit/submitBtn";
 
   export default function UserLogin(){
-    const dispatch = useAppDispatch();
    
   return (
     <KeyboardAvoidingView behavior="padding">
       <View style={style.cont}>
-        <TextInput
-          style={style.input}
-          placeholder="username"
-          onChangeText={(Text) => dispatch(username(Text))}
-        />
-        <TextInput
-          style={style.input}
-          placeholder="password"
-          onChangeText={(Text) => dispatch(password(Text))}
-        />
-        <TouchableOpacity onPress={()=>dispatch(_logIn())} style={style.btn}>
-          <Text style={[style.t, { textDecorationLine: "none" }]}>Login</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => dispatch(newUser())}
-          style={style.nbtn}
-        >
-          <Text style={style.t}>Create new User</Text>
-        </TouchableOpacity>
+        <Username/>
+        <Password/>
+        <Submitbtn/>
+        <LogintypeBtn/>
         <KeyboardAvoidingView />
       </View>
     </KeyboardAvoidingView>
   );
   }
+
+  const style = StyleSheet.create({
+    cont: {
+      width: 300,
+      height: 330,
+      borderStyle: "solid",
+      borderWidth: 3,
+      borderColor: "black",
+      borderRadius: 10,
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "flex-start",
+      position: "relative",
+    },
+    
+  })
