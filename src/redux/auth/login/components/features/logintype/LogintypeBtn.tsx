@@ -6,9 +6,8 @@ import { typeHandler } from "./logintypeSlice";
 export const LogintypeBtn= ()=>{
     const dispatch= useAppDispatch()
     const textval= useAppSelector(state=>state.auth.login.type.typeBtnName)
-    const type = useAppSelector(state=> state.auth.login.type.newUser)
     return(
-        <TouchableOpacity onPress={()=>dispatch(typeHandler(type))} style={style.btn}>
+        <TouchableOpacity onPress={()=>dispatch(typeHandler(textval))} style={style.btn}>
             <Text style={style.btnname}>
                 {textval}
             </Text>

@@ -4,12 +4,21 @@ import Login  from "../../redux/auth/login/Login";
 import { useAppSelector } from "../../redux/hooks/Redux";
 
 export default function LoginScreen(props:any){
-    const message= useAppSelector(state=>state.auth.login.submit.message)
+    const message= useAppSelector(state=>state.auth.login.submit.message);
+
+    const loginHandler=()=>{
+        switch (message){
+            case 'Loged in':
+                return //ask if loginData should be saved for autologin
+            default:
+               return Login()
+        }
+    }
     return(
         <View style={style.cont}>
             <CenteredWrapper>
                 <Text style={style.title}>{message}</Text>
-                {Login()}
+                {loginHandler()}
             </CenteredWrapper>
         </View>
     )

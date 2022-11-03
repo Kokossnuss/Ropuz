@@ -4,28 +4,28 @@ import { RootState } from "../../../../../Store";
 interface logintypeStates{
     typeBtnName: string,
     submitBtnName: string,
-    newUser: boolean,
+    process?: string,
 }
 
 export const initialState:logintypeStates={
     typeBtnName: "Create new User",
     submitBtnName: "Login",
-    newUser: false,
+    process: 'login',
 }
 
 export const logintypeSlice= createSlice({
     name: "logintype",
     initialState,
     reducers:{
-        typeHandler:(state, action:PayloadAction<boolean>)=>{
+        typeHandler:(state, action:PayloadAction<string>)=>{
             switch(action.payload){
-                case true:
-                    state.newUser =false;
+                case 'existing User':
+                    state.process ='login';
                     state.typeBtnName= "Create new User";
                     state.submitBtnName= "Login";
                 break;
-                case false:
-                    state.newUser=true;
+                case 'Create new User':
+                    state.process='signUp';
                     state.typeBtnName= "existing User";
                     state.submitBtnName= "Sign up";
                 break;

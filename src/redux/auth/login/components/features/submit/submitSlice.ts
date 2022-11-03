@@ -27,6 +27,7 @@ export const submitSlice=createSlice({
         .addCase(_signUpThunk.fulfilled, (state, action:PayloadAction<string>)=>{
             state.jwt = action.payload;
             state.message= 'Loged in';
+            state.loggedIn= true;
         })
         .addCase(_signUpThunk.rejected, (state)=>{
             state.message= 'Invalid Sign up Form'
@@ -37,6 +38,7 @@ export const submitSlice=createSlice({
         .addCase(_logInThunk.fulfilled, (state, action:PayloadAction<string>)=>{
             state.jwt = action.payload;
             state.message= 'Loged in';
+            state.loggedIn= true;
         })
         .addCase(_logInThunk.rejected, state=>{
             state.message= 'invalid Login information'
