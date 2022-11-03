@@ -3,7 +3,7 @@ import { CenteredWrapper } from "../../components/wrappers/CenteredWrapper";
 import Login  from "../../redux/auth/login/Login";
 import { useAppSelector } from "../../redux/hooks/Redux";
 
-export default function AuthScreen(props:any){
+export default function LoginScreen(props:any){
     const message= useAppSelector(state=>state.auth.login.submit.message)
     return(
         <View style={style.cont}>

@@ -16,7 +16,6 @@ import {
         <Password/>
         <Submitbtn/>
         <LogintypeBtn/>
-        <KeyboardAvoidingView />
       </View>
     </KeyboardAvoidingView>
   );

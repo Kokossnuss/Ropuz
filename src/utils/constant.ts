@@ -1,7 +1,8 @@
 
 export const _API= "http://172.20.10.6:1337/api";
 export const AUTH_TOKEN= "jwt";
-export const USER_TOKEN= 'user'
+export const USER_TOKEN= 'user';
+export const PW_TOKEN= 'password';
 
 
 export const _USER= {

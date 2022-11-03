@@ -1,5 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { USER_TOKEN } from "../utils/constant";
+import { USER_TOKEN } from "../../utils/constant";
 
 export const _getUSER= async()=>{
     try{
