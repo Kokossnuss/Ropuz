@@ -1,6 +1,7 @@
 import { useAppSelector } from "../../hooks/Redux";
 import CreateUser from "./components/CreateUser";
 import UserLogin from "./components/UserLogin";
+import AutoLogin from "./components/AutoLogin";
 
 export default function Login() {
   const process = useAppSelector((state) => state.auth.login.type.process);
@@ -10,7 +11,7 @@ export default function Login() {
         case 'signUp':
          return <CreateUser/>
         case 'auto':
-          return
+          return <AutoLogin/>
       }
 }
 

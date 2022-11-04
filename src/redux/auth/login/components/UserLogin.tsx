@@ -6,9 +6,16 @@ import {
   import { Username, Password } from "./features/user/LoginInputs";
   import { LogintypeBtn } from "./features/logintype/LogintypeBtn";
   import { Submitbtn } from "./features/submit/submitBtn";
+  import { useEffect } from "react";
+  import { useAppDispatch } from "../../../hooks/Redux";
+  import { userlogin } from "./features/submit/submitSlice";
 
   export default function UserLogin(){
-   
+    const dispatch= useAppDispatch();
+    useEffect(()=>{
+      dispatch(userlogin())
+    })
+    
   return (
     <KeyboardAvoidingView behavior="padding">
       <View style={style.cont}>

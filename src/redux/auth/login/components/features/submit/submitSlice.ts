@@ -1,6 +1,7 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import { RootState } from "../../../../../Store";
 import { _signUpThunk, _logInThunk } from "./subtmitThunks";
+import {_setAUTH} from "../../../../../../controllers/user/auth_TOKEN";
 
 interface submitType{
    loggedIn: boolean,
@@ -17,7 +18,15 @@ export const submitSlice=createSlice({
     name: "submit",
     initialState,
     reducers:{
-        
+        createuser: state=>{
+            state.message= 'Create User'
+        },
+        autologin: state=>{
+            state.message= ''
+        },
+        userlogin: state=>{
+            state.message= 'User Login'
+        }
     },
     extraReducers: builder=>{
         builder
@@ -28,6 +37,7 @@ export const submitSlice=createSlice({
             state.jwt = action.payload;
             state.message= 'Loged in';
             state.loggedIn= true;
+            _setAUTH(state.jwt);
         })
         .addCase(_signUpThunk.rejected, (state)=>{
             state.message= 'Invalid Sign up Form'
@@ -39,6 +49,7 @@ export const submitSlice=createSlice({
             state.jwt = action.payload;
             state.message= 'Loged in';
             state.loggedIn= true;
+            _setAUTH(state.jwt);
         })
         .addCase(_logInThunk.rejected, state=>{
             state.message= 'invalid Login information'
@@ -46,6 +57,6 @@ export const submitSlice=createSlice({
     }
 })
 
-export const {}= submitSlice.actions;
+export const {createuser, userlogin, autologin}= submitSlice.actions;
 export const selectSubmit = (state:RootState)=> state.auth.login.submit;
 export default submitSlice.reducer;

@@ -8,8 +8,6 @@ export default function LoginScreen(props:any){
 
     const loginHandler=()=>{
         switch (message){
-            case 'Loged in':
-                return //ask if loginData should be saved for autologin
             default:
                return Login()
         }

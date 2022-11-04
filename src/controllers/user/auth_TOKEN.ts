@@ -11,7 +11,6 @@ export const _getAUTH=async()=>{
 
 export const _setAUTH=async(jwt:string)=>{
     try{
-        console.log('out')
         return await AsyncStorage.setItem(AUTH_TOKEN, jwt)
     }catch(e){
         console.log(e)
